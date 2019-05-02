@@ -15,6 +15,10 @@ import time
 import string
 import os #for file management make directory
 import shutil #for file management, copy file
+import argparse
+
+parser = argparse.ArgumentParser('Convertion from ROSbag to CSV file.')
+parser.add_argument('--bagname', dest='bagname')
 
 def main(args):
 	#verify correct input arguments: 1 or 2
@@ -100,4 +104,5 @@ def main(args):
 
 
 if __name__ == '__main__':
-	main(sys.argv)
+	args = parser.parse_args()
+	main(args)
